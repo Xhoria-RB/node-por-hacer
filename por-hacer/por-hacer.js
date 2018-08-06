@@ -1,5 +1,6 @@
 const fs = require('fs');
 
+
 let listadoPorHacer = [];
 
 let guardarDB = () => {
@@ -36,6 +37,7 @@ const crear = (descripcion) => {
 
 const getListado = () => {
     cargarDB();
+    //let nuevoListado = listadoPorHacer.filter(tarea => tarea.completado !== completado);
     return listadoPorHacer;
 
 };

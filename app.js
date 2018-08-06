@@ -11,6 +11,7 @@ switch (comando) {
 
     case 'listar':
         let listado = porHacer.getListado();
+
         for (let tarea of listado) {
             console.log('=========================='.green);
             console.log(tarea.descripcion);

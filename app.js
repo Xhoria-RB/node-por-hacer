@@ -10,7 +10,15 @@ switch (comando) {
         break;
 
     case 'listar':
-        let listado = porHacer.getListado();
+        let listado = [];
+
+        if (argv.filtro) {
+            let filtro = JSON.parse(argv.filtro);
+            listado = porHacer.getListadoFiltro(filtro);
+
+        } else {
+            listado = porHacer.getListado();
+        }
 
         for (let tarea of listado) {
             console.log('=========================='.green);

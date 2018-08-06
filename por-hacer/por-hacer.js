@@ -41,7 +41,18 @@ const getListado = () => {
     return listadoPorHacer;
 
 };
+const getListadoFiltro = (filtro) => {
+    cargarDB();
+    let nuevaLista = [];
 
+    for (let tarea of listadoPorHacer) {
+        if (tarea.completado === filtro) {
+            nuevaLista.push(tarea);
+        }
+    }
+
+    return nuevaLista;
+};
 
 const actualizar = (descripcion, completado = true) => {
     cargarDB();
@@ -86,6 +97,7 @@ const borrar = (descripcion) => {
 module.exports = {
     crear,
     getListado,
+    getListadoFiltro,
     actualizar,
     borrar
 }

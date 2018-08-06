@@ -10,6 +10,11 @@ const completado = {
     desc: 'Marca como completado o pendiente la tarea'
 };
 
+const filtro = {
+    alias: 'f',
+    desc: 'Filtra las tareas por hacer referente al estado'
+};
+
 const argv = require('yargs')
     .command('crear', 'Crea una tarea por hacer', {
         descripcion //descripcion: descripcion
@@ -22,7 +27,7 @@ const argv = require('yargs')
         descripcion
     })
     .command('listar', 'Hace una lista de las tareas por hacer', {
-        completado
+        filtro
     })
     .help()
     .argv;
